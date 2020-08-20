@@ -10,8 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/slider": "^3.0.3",
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-responsive-screen": "^1.4.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
