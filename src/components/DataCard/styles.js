@@ -5,10 +5,10 @@ import { colors } from '../../styles/global'
 
 export const CardWrapper = styled.View`
   background-color: ${colors.blackColor};
-  margin-top: ${heightDP('1.5%')};
-  width: ${widthDP('96%')};
-  padding-top: ${heightDP('2%')};
-  padding-bottom: ${heightDP('2%')};
+  margin-top: ${heightDP('1.5%')}px;
+  width: ${widthDP('96%')}px;
+  padding-top: ${heightDP('2%')}px;
+  padding-bottom: ${heightDP('2%')}px;
   align-items: center;
   border-radius: 8px;
 `
@@ -17,13 +17,16 @@ export const Card = {}
 
 Card.Title = styled.Text`
   color: ${colors.whiteColor};
+  font-family: 'PoppinsRegular';
+  font-size: ${heightDP(2)}px;
   text-align: center;
 `
 
 Card.Value = styled.Text`
   color: ${colors.whiteColor};
   margin-top: 5px;
-  font-size: ${heightDP(6)};
+  font-family: 'PoppinsRegular';
+  font-size: ${heightDP(5.5)}px;
   text-align: center;
 `
 
