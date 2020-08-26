@@ -7,7 +7,8 @@ import {
   ImageLoading
 } from './styles'
 
-import ampulhetaIcon from '../../assets/ampulheta.png'
+import colors from '../../styles/colors'
+import hourglassIcon from '../../assets/hourglass.png'
 
 import calculateIMC from '../../utils/calculateIMC'
 import { useInfo } from '../../context/InfoProvider'
@@ -29,30 +30,25 @@ const ResultCard = () => {
         })
       }
     }
-  }, [values.onClick])
-
-  /* useDidUpdate(() => {
-    const result = calculateIMC(values)
-    setData(result)
-  }, [values.onClick]) */
+  }, [values.onClickCalculate])
 
   return (
     <>
       {!values.resultAvailable
         ? (
           <CardWrapper>
-            <SmallText color="white">AGUARDANDO INFORMAÇÕES</SmallText>
+            <SmallText color={colors.whiteColor}>AGUARDANDO INFORMAÇÕES</SmallText>
             <ImageLoading
               resizeMode="contain"
-              source={ampulhetaIcon}
+              source={hourglassIcon}
             />
           </CardWrapper>
         )
         : (
           <CardWrapper>
-            <SmallText color="white">VOCÊ ESTÁ</SmallText>
+            <SmallText color={colors.whiteColor}>VOCÊ ESTÁ{data.complement && ' com'}</SmallText>
             <LargText color={data.color}>{data.situation}</LargText>
-            <SmallText color="white">SEU IMC É</SmallText>
+            <SmallText color={colors.whiteColor}>SEU IMC É</SmallText>
             <MediumText color={data.color}>{data.imc}</MediumText>
           </CardWrapper>
         )}

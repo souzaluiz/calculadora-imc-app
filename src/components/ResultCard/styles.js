@@ -14,6 +14,7 @@ export const CardWrapper = styled.View`
 export const SmallText = styled.Text`
   color: ${({ color }) => color};
   font-size: ${heightDP(1.6)}px;
+  text-transform: uppercase;
   font-family: 'PoppinsMedium';
 `
 
@@ -27,8 +28,10 @@ export const LargText = styled.Text`
 export const MediumText = styled.Text`
   color: ${({ color }) => color};
   font-family: 'PoppinsMedium';
+  text-transform: uppercase;
   font-size: ${heightDP(3.2)}px;
 `
+
 export const ImageLoading = styled.Image`
   height: ${heightDP(10)}px;
 `

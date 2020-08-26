@@ -10,7 +10,7 @@ import {
 
 import { useInfo } from '../../context/InfoProvider'
 
-import restoreIcon from '../../assets/rotate-ccw.png'
+import clearInfoIcon from '../../assets/rotate-ccw.png'
 
 function Header () {
   const { values, setValues } = useInfo()
@@ -29,7 +29,7 @@ function Header () {
       <HeaderTitle>Calculadora IMC</HeaderTitle>
       <HeaderButton onPress={clearInfors}>
         <HeaderButtonIcon
-          source={restoreIcon}
+          source={clearInfoIcon}
           resizeMode="contain"
         />
       </HeaderButton>

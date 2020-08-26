@@ -1,8 +1,9 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
-import Home from './pages/Home'
-import { AppWrapper } from './styles/global'
+
 import InfoProvider from './context/InfoProvider'
+import { AppWrapper } from './styles/AppWrapper'
+import Home from './pages/Home'
 
 export default function App () {
   return (

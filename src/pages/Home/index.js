@@ -1,6 +1,11 @@
 import React from 'react'
 
-import { CardsContainer, ButtonCalculate } from './styles'
+import {
+  HomeWrapper,
+  CardsContainer,
+  ButtonCalculate,
+  ButtonCalculateText
+} from './styles'
 
 import Header from '../../components/Header'
 import DataCard from '../../components/DataCard'
@@ -13,12 +18,12 @@ function Home () {
   function calculateImc () {
     setValues({
       ...values,
-      onClick: !values.onClick
+      onClickCalculate: !values.onClickCalculate
     })
   }
 
   return (
-    <>
+    <HomeWrapper>
       <Header />
 
       <CardsContainer>
@@ -31,7 +36,6 @@ function Home () {
           name="weight"
           decimalPlaces={1}
           maximumValue={150.0}
-          buttons
         />
 
         <DataCard
@@ -43,11 +47,11 @@ function Home () {
         />
 
         <ButtonCalculate onPress={calculateImc}>
-          <ButtonCalculate.Text>Calcular</ButtonCalculate.Text>
+          <ButtonCalculateText>Calcular</ButtonCalculateText>
         </ButtonCalculate>
 
       </CardsContainer>
-    </>
+    </HomeWrapper>
   )
 }
 

@@ -7,7 +7,7 @@ export default function InfoProvider ({ children }) {
   const [values, setValues] = useState({
     weight: 15,
     height: 0.50,
-    onClick: false,
+    onClickCalculate: false,
     resultAvailable: false
   })
 

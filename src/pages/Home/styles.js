@@ -2,6 +2,10 @@ import styled from 'styled-components/native'
 import { widthDP, heightDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
 
+export const HomeWrapper = styled.View`
+  flex: 1;
+`
+
 export const CardsContainer = styled.View`
   flex: 1;
   align-items: center;
@@ -17,7 +21,7 @@ export const ButtonCalculate = styled.TouchableOpacity`
   justify-content: center;
 `
 
-ButtonCalculate.Text = styled.Text`
+export const ButtonCalculateText = styled.Text`
   font-family: 'PoppinsMedium';
-  font-size: ${heightDP('2.5%')}px;
+  font-size: ${heightDP(2.5)}px;
 `

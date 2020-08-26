@@ -86,8 +86,7 @@ DataCard.propTypes = {
   minimumValue: PropTypes.number.isRequired,
   maximumValue: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
-  decimalPlaces: PropTypes.number,
-  buttons: PropTypes.bool
+  decimalPlaces: PropTypes.number
 }
 
 export default DataCard

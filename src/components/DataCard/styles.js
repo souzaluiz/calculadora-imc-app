@@ -6,10 +6,10 @@ import colors from '../../styles/colors'
 
 export const CardWrapper = styled.View`
   background-color: ${colors.blackColor};
-  margin-top: ${heightDP('1.5%')}px;
-  width: ${widthDP('96%')}px;
-  padding-top: ${heightDP('2%')}px;
-  padding-bottom: ${heightDP('2%')}px;
+  margin-top: ${heightDP(1.5)}px;
+  width: ${widthDP(96)}px;
+  padding-top: ${heightDP(2)}px;
+  padding-bottom: ${heightDP(2)}px;
   align-items: center;
   border-radius: 8px;
 `

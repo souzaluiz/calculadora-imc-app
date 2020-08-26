@@ -3,8 +3,8 @@ import { heightDP, widthDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
 
 export const HeaderWrapper = styled.View`
-  padding-top: ${heightDP('2.5%')}px;
-  padding-bottom: ${heightDP('2.5%')}px;
+  padding-top: ${heightDP(2.5)}px;
+  padding-bottom: ${heightDP(2.5)}px;
   background-color: ${colors.blackColor};
   align-items: center;
   flex-direction: row;
@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.View`
 `
 
 export const HeaderTitle = styled.Text`
-  font-size: ${heightDP('3%')}px;
+  font-size: ${heightDP(3)}px;
   color: ${colors.whiteColor};
   font-family: 'PoppinsRegular';
 `
