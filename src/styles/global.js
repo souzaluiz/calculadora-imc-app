@@ -1,12 +1,5 @@
 import styled from 'styled-components/native'
-
-export const colors = {
-  primaryColor: '#0ABAA4',
-  secondaryColor: '#D80945',
-  whiteColor: '#FDFFFD',
-  blackColor: '#00141B',
-  backgroundColor: '#091D26'
-}
+import colors from './colors'
 
 export const AppWrapper = styled.SafeAreaView`
   flex: 1;

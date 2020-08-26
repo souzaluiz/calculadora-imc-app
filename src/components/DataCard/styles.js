@@ -1,7 +1,8 @@
 import styled from 'styled-components/native'
+import Slider from '@react-native-community/slider'
 
 import { widthDP, heightDP } from '../../utils/responsive'
-import { colors } from '../../styles/global'
+import colors from '../../styles/colors'
 
 export const CardWrapper = styled.View`
   background-color: ${colors.blackColor};
@@ -13,40 +14,42 @@ export const CardWrapper = styled.View`
   border-radius: 8px;
 `
 
-export const Card = {}
-
-Card.Title = styled.Text`
+export const CardTitle = styled.Text`
   color: ${colors.whiteColor};
   font-family: 'PoppinsRegular';
   font-size: ${heightDP(2)}px;
   text-align: center;
 `
 
-Card.Value = styled.Text`
+export const CardValue = styled.Text`
   color: ${colors.whiteColor};
-  margin-top: 5px;
+  margin-top: 2px;
   font-family: 'PoppinsRegular';
-  font-size: ${heightDP(5.5)}px;
+  font-size: ${heightDP(5.2)}px;
   text-align: center;
 `
 
-export const ButtonsWrapper = styled.View`
+export const ActionsContainer = styled.View`
   width: 80%;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: ${heightDP(1)};
-  margin-bottom: ${heightDP(1.5)};
+  margin-top: ${heightDP(1)}px;
+  margin-bottom: ${heightDP(1)}px;
 `
 
-export const Button = styled.TouchableOpacity`
+export const ButtonWrapper = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
-  width: 40%;
-  height: ${heightDP(5)};
-  border-radius: 3;
+  height: ${heightDP(5)}px;
+  width: ${heightDP(5)}px;
+  border-radius: 50px;
   align-items: center;
   justify-content: center;
 `
 
-Button.Image = styled.Image`
-  width: ${widthDP(5)};
+export const ButtonImage = styled.Image`
+  width: ${widthDP(10)}px;
+`
+
+export const SliderControl = styled(Slider)`
+  width: 75%;
 `

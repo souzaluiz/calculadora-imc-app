@@ -1,62 +1,77 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Slider from '@react-native-community/slider'
 
-import { CardWrapper, Card, ButtonsWrapper, Button } from './styles'
+import {
+  CardWrapper,
+  CardTitle,
+  CardValue,
+  ActionsContainer,
+  ButtonWrapper,
+  ButtonImage,
+  SliderControl
+} from './styles'
 
-import plusIcon from '../../assets/plus.png'
-import minusIcon from '../../assets/minus.png'
+import { useInfo } from '../../context/InfoProvider'
+
+import circlePlusIcon from '../../assets/circle-plus.png'
+import circleMinusIcon from '../../assets/circle-minus.png'
 
 function DataCard (props) {
-  const [weight, setWeight] = useState(0)
+  const { values, setValues } = useInfo()
 
-  function addGrams () {
-    if (weight < props.maximumValue) {
-      setWeight(weight => weight + 0.1)
+  function increment () {
+    if (values[props.name] < props.maximumValue) {
+      setValues({
+        ...values,
+        [props.name]: values[props.name] + props.step
+      })
     }
   }
 
-  function removeGrams () {
-    if (weight > props.minimumValue) {
-      setWeight(weight => weight - 0.1)
+  function decrement () {
+    if (values[props.name] > props.minimumValue) {
+      setValues({
+        ...values,
+        [props.name]: values[props.name] - props.step
+      })
     }
   }
 
   return (
     <CardWrapper>
-      <Card.Title>{props.title}</Card.Title>
-      <Card.Value>{weight.toFixed(props.decimalPlaces)}</Card.Value>
-      <Slider
-        style={{ width: '80%', height: 40 }}
-        minimumValue={props.minimumValue}
-        step={props.step}
-        value={weight}
-        maximumValue={props.maximumValue}
-        onValueChange={valueSlider => setWeight(valueSlider)}
-        minimumTrackTintColor="#F1F2F6"
-        maximumTrackTintColor="#A6A8B9"
-      />
-      {props.buttons && (
-        <ButtonsWrapper>
-          <Button
-            onPress={removeGrams}
-          >
-            <Button.Image
-              source={minusIcon}
-              resizeMode="center"
-            />
-          </Button>
+      <CardTitle>{props.title}</CardTitle>
+      <CardValue>{values[props.name].toFixed(props.decimalPlaces)}</CardValue>
 
-          <Button
-            onPress={addGrams}
-          >
-            <Button.Image
-              source={plusIcon}
-              resizeMode="center"
-            />
-          </Button>
-        </ButtonsWrapper>
-      )}
+      <ActionsContainer>
+        <ButtonWrapper onPress={decrement} >
+          <ButtonImage
+            source={circleMinusIcon}
+            resizeMode="center"
+          />
+        </ButtonWrapper>
+
+        <SliderControl
+          minimumValue={props.minimumValue}
+          step={props.step}
+          value={values[props.name]}
+          maximumValue={props.maximumValue}
+          onValueChange={valuesSlider => (
+            setValues({
+              ...values,
+              [props.name]: valuesSlider
+            })
+          )}
+          minimumTrackTintColor="#F1F2F6"
+          maximumTrackTintColor="#A6A8B9"
+        />
+
+        <ButtonWrapper onPress={increment} >
+          <ButtonImage
+            source={circlePlusIcon}
+            resizeMode="center"
+          />
+        </ButtonWrapper>
+      </ActionsContainer>
     </CardWrapper>
   )
 }
@@ -67,6 +82,7 @@ DataCard.defaultProps = {
 
 DataCard.propTypes = {
   title: PropTypes.string,
+  name: PropTypes.string,
   minimumValue: PropTypes.number.isRequired,
   maximumValue: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
