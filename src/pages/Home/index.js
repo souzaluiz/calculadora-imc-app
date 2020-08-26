@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { CardsContainer, ButtonCalculate } from './styles'
 
@@ -8,12 +8,13 @@ import ResultCard from '../../components/ResultCard'
 import { useInfo } from '../../context/InfoProvider'
 
 function Home () {
-  const [resultAvailable, setResultAvailable] = useState(false)
   const { values, setValues } = useInfo()
 
   function calculateImc () {
-    setResultAvailable(true)
-    setValues({ ...values, onClick: !values.onClick })
+    setValues({
+      ...values,
+      onClick: !values.onClick
+    })
   }
 
   return (
@@ -21,9 +22,7 @@ function Home () {
       <Header />
 
       <CardsContainer>
-        {resultAvailable
-          ? <ResultCard />
-          : <ResultCard empty />}
+        <ResultCard />
 
         <DataCard
           title="Peso (kg)"

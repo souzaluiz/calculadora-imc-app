@@ -6,25 +6,39 @@ import {
   MediumText,
   ImageLoading
 } from './styles'
-import PropTypes from 'prop-types'
 
 import ampulhetaIcon from '../../assets/ampulheta.png'
 
 import calculateIMC from '../../utils/calculateIMC'
 import { useInfo } from '../../context/InfoProvider'
+import { useIsMount } from '../../hooks/useIsMount'
 
-const ResultCard = ({ empty }) => {
+const ResultCard = () => {
+  const isMount = useIsMount()
   const [data, setData] = useState({})
-  const { values } = useInfo()
+  const { values, setValues } = useInfo()
 
   useEffect(() => {
-    const imc = calculateIMC(values)
-    setData(imc)
+    if (!isMount) {
+      const result = calculateIMC(values)
+      setData(result)
+      if (!values.resultAvailable) {
+        setValues({
+          ...values,
+          resultAvailable: true
+        })
+      }
+    }
   }, [values.onClick])
+
+  /* useDidUpdate(() => {
+    const result = calculateIMC(values)
+    setData(result)
+  }, [values.onClick]) */
 
   return (
     <>
-      {empty
+      {!values.resultAvailable
         ? (
           <CardWrapper>
             <SmallText color="white">AGUARDANDO INFORMAÇÕES</SmallText>
@@ -44,10 +58,6 @@ const ResultCard = ({ empty }) => {
         )}
     </>
   )
-}
-
-ResultCard.propTypes = {
-  empty: PropTypes.bool
 }
 
 export default ResultCard
