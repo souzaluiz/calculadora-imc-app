@@ -46,7 +46,7 @@ No seu terminal:
 ```
 
 ## :memo: Licença
-Esse projeto está sobre a licença MIT. Veja a [licença](https://github.com/SouzaLuiz/calculator-imc-mobile/blob/master/LICENSE) para mais detalhes.
+Esse projeto está sobre a licença MIT. Veja a [licença](https://github.com/SouzaLuiz/calculator-imc-app/blob/master/LICENSE) para mais detalhes.
 
 ---
 
