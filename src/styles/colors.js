@@ -1,10 +1,9 @@
 export default {
   primaryColor: '#0ABAA4',
-  secondaryColor: '#D80945',
   whiteColor: '#FDFFFD',
-  blackColor: '#00141B',
-  backgroundColor: '#091D26',
-  attentionColor: '#f6e58d',
+  blackColor: '#161623',
+  backgroundColor: '#232330',
+  attentionColor: '#ffdd59',
   healthyColor: '#0ABAA4',
-  dangerColor: '#e55039'
+  dangerColor: '#ff3f34'
 }

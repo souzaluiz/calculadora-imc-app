@@ -30,7 +30,7 @@ export const CardValue = styled.Text`
 `
 
 export const ActionsContainer = styled.View`
-  width: 80%;
+  width: 95%;
   flex-direction: row;
   justify-content: space-around;
   margin-top: ${heightDP(1)}px;
@@ -39,17 +39,19 @@ export const ActionsContainer = styled.View`
 
 export const ButtonWrapper = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
-  height: ${heightDP(5)}px;
-  width: ${heightDP(5)}px;
+  height: ${heightDP(5.5)}px;
+  width: ${heightDP(5.5)}px;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
 `
 
 export const ButtonImage = styled.Image`
-  width: ${widthDP(10)}px;
+  width: ${widthDP(8)}px;
 `
 
-export const SliderControl = styled(Slider)`
-  width: 75%;
+export const SliderControl = styled(Slider).attrs({
+  thumbTintColor: colors.primaryColor
+})`
+  width: 70%;
 `
