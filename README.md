@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://firebasestorage.googleapis.com/v0/b/my-storage-64c9d.appspot.com/o/imc-app%2Fimc-logo.svg?alt=media&token=b2a1415b-0a7e-4689-a630-3d2f0ed0abd7" width="150" height="150" alt="IMC app logo" />
+  <img src="https://user-images.githubusercontent.com/29143315/91514744-879a9180-e8b5-11ea-85f4-1f592df07d91.png" width="130" height="130" alt="IMC app logo" />
   <br>
   Calculadora IMC
 </h1>
