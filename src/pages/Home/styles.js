@@ -23,5 +23,6 @@ export const ButtonCalculate = styled.TouchableOpacity`
 
 export const ButtonCalculateText = styled.Text`
   font-family: 'PoppinsMedium';
+  color: ${colors.blackColor};
   font-size: ${heightDP(2.5)}px;
 `
