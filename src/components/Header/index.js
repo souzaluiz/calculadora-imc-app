@@ -1,11 +1,10 @@
 import React from 'react'
 
 import {
-  HeaderWrapper,
-  HeaderTitle,
-  HeaderButton,
-  HeaderButtonIcon,
-  HeaderBoxVoid
+  Wrapper,
+  Title,
+  Void,
+  Button
 } from './styles'
 
 import { useInfo } from '../../context/InfoProvider'
@@ -23,17 +22,18 @@ function Header () {
   }
 
   return (
-    <HeaderWrapper>
-      <HeaderBoxVoid />
+    <Wrapper>
+      <Void />
 
-      <HeaderTitle>Calculadora IMC</HeaderTitle>
-      <HeaderButton onPress={clearInfors}>
-        <HeaderButtonIcon
+      <Title>Calculadora IMC</Title>
+
+      <Button onPress={clearInfors}>
+        <Button.Icon
           source={clearInfoIcon}
           resizeMode="contain"
         />
-      </HeaderButton>
-    </HeaderWrapper>
+      </Button>
+    </Wrapper>
   )
 }
 
