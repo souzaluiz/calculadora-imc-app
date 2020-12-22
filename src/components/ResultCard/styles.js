@@ -4,6 +4,7 @@ import { heightDP, widthDP } from '../../utils/responsive'
 
 export const CardWrapper = styled.View`
   height: ${heightDP(25)}px;
+  padding-top: 10px;
   width: ${widthDP(96)}px;
   border-radius: 8px;
   align-items: center;

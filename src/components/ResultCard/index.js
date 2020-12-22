@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
+
+import LottieView from 'lottie-react-native'
+
 import {
   CardWrapper,
   SmallText,
   LargText,
-  MediumText,
-  ImageLoading
+  MediumText
 } from './styles'
 
 import colors from '../../styles/colors'
-import hourglassIcon from '../../assets/hourglass.png'
-
 import calculateIMC from '../../utils/calculateIMC'
 import { useInfo } from '../../context/InfoProvider'
 import { useIsMount } from '../../hooks/useIsMount'
@@ -38,9 +38,11 @@ const ResultCard = () => {
         ? (
           <CardWrapper>
             <SmallText color={colors.whiteColor}>AGUARDANDO INFORMAÇÕES</SmallText>
-            <ImageLoading
-              resizeMode="contain"
-              source={hourglassIcon}
+            <LottieView
+              source={require('../../assets/lottie/loading.json')}
+              autoPlay
+              loop
+              style={{ width: 120 }}
             />
           </CardWrapper>
         )
