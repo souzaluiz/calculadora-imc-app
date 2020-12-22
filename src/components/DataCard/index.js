@@ -6,15 +6,11 @@ import {
   CardTitle,
   CardValue,
   ActionsContainer,
-  ButtonWrapper,
-  ButtonImage,
+  Button,
   SliderControl
 } from './styles'
 
 import { useInfo } from '../../context/InfoProvider'
-
-import circlePlusIcon from '../../assets/circle-plus.png'
-import circleMinusIcon from '../../assets/circle-minus.png'
 
 function DataCard (props) {
   const { values, setValues } = useInfo()
@@ -43,12 +39,9 @@ function DataCard (props) {
       <CardValue>{values[props.name].toFixed(props.decimalPlaces)}</CardValue>
 
       <ActionsContainer>
-        <ButtonWrapper onPress={decrement} >
-          <ButtonImage
-            source={circleMinusIcon}
-            resizeMode="center"
-          />
-        </ButtonWrapper>
+        <Button onPress={decrement} >
+          <Button.LessIcon />
+        </Button>
 
         <SliderControl
           minimumValue={props.minimumValue}
@@ -65,12 +58,9 @@ function DataCard (props) {
           maximumTrackTintColor="#A6A8B9"
         />
 
-        <ButtonWrapper onPress={increment} >
-          <ButtonImage
-            source={circlePlusIcon}
-            resizeMode="center"
-          />
-        </ButtonWrapper>
+        <Button onPress={increment} >
+          <Button.MoreIcon />
+        </Button>
       </ActionsContainer>
     </CardWrapper>
   )

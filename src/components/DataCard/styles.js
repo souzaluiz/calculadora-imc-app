@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
 import Slider from '@react-native-community/slider'
 
+import LessIcon from '../../assets/less.svg'
+import MoreIcon from '../../assets/more.svg'
 import { widthDP, heightDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
 
@@ -37,18 +39,26 @@ export const ActionsContainer = styled.View`
   margin-bottom: ${heightDP(1)}px;
 `
 
-export const ButtonWrapper = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
   height: ${heightDP(5.5)}px;
   width: ${heightDP(5.5)}px;
-  border-radius: 50px;
+  border-radius: 30px;
   align-items: center;
   justify-content: center;
 `
 
-export const ButtonImage = styled.Image`
-  width: ${widthDP(8)}px;
-`
+Button.LessIcon = styled(LessIcon).attrs(({
+  fill: colors.blackColor,
+  width: widthDP(8),
+  height: heightDP(8)
+}))``
+
+Button.MoreIcon = styled(MoreIcon).attrs(({
+  fill: colors.blackColor,
+  width: widthDP(8),
+  height: heightDP(8)
+}))``
 
 export const SliderControl = styled(Slider).attrs({
   thumbTintColor: colors.primaryColor

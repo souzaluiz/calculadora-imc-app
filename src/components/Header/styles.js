@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 import { heightDP, widthDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
+import ClearIcon from '../../assets/rubber.svg'
 
 export const Wrapper = styled.View`
   padding-top: ${heightDP(2)}px;
@@ -22,9 +23,11 @@ export const Button = styled.TouchableOpacity`
   margin-right: ${widthDP(4)}px;
 `
 
-Button.Icon = styled.Image`
-  height: ${heightDP(5)}px;
-`
+Button.Icon = styled(ClearIcon).attrs(({
+  fill: '#FFF',
+  width: widthDP(7),
+  height: heightDP(7)
+}))``
 
 export const Void = styled.View`
   width: 20px;
