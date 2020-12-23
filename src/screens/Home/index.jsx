@@ -1,19 +1,15 @@
 import React from 'react'
 
-import {
-  Wrapper,
-  CardsContainer,
-  ButtonCalculate,
-  ButtonCalculateText
-} from './styles'
-
 import Header from '../../components/Header'
-import DataCard from '../../components/DataCard'
+import ControlCard from '../../components/ControlCard'
 import ResultCard from '../../components/ResultCard'
-import { useInfo } from '../../context/InfoProvider'
+
+import { useDataImc } from '../../context/DataImcContext'
+
+import { Wrapper, Cards, Button } from './styles'
 
 function Home () {
-  const { values, setValues } = useInfo()
+  const { values, setValues } = useDataImc()
 
   function calculateImc () {
     setValues({
@@ -26,10 +22,10 @@ function Home () {
     <Wrapper>
       <Header />
 
-      <CardsContainer>
+      <Cards>
         <ResultCard />
 
-        <DataCard
+        <ControlCard
           title="Peso (kg)"
           minimumValue={15.0}
           maximumValue={150.0}
@@ -38,7 +34,7 @@ function Home () {
           decimalPlaces={1}
         />
 
-        <DataCard
+        <ControlCard
           title="Altura (m)"
           minimumValue={0.5}
           maximumValue={2.3}
@@ -46,11 +42,11 @@ function Home () {
           name="height"
         />
 
-        <ButtonCalculate onPress={calculateImc}>
-          <ButtonCalculateText>Calcular</ButtonCalculateText>
-        </ButtonCalculate>
+        <Button onPress={calculateImc}>
+          <Button.Text>Calcular</Button.Text>
+        </Button>
 
-      </CardsContainer>
+      </Cards>
     </Wrapper>
   )
 }

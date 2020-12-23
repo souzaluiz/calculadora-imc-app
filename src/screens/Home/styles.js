@@ -7,13 +7,14 @@ export const Wrapper = styled.View`
   background-color: ${colors.backgroundColor};
 `
 
-export const CardsContainer = styled.View`
+export const Cards = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-evenly;
   padding: ${heightDP(2)}px 0;
 `
-export const ButtonCalculate = styled.TouchableOpacity`
+
+export const Button = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
   margin-top: ${heightDP(2)}px;
   height: ${heightDP(7)}px;
@@ -23,7 +24,7 @@ export const ButtonCalculate = styled.TouchableOpacity`
   justify-content: center;
 `
 
-export const ButtonCalculateText = styled.Text`
+Button.Text = styled.Text`
   font-family: 'PoppinsMedium';
   color: ${colors.blackColor};
   font-size: ${heightDP(2.5)}px;

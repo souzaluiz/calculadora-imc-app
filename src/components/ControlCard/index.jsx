@@ -10,10 +10,10 @@ import {
   SliderControl
 } from './styles'
 
-import { useInfo } from '../../context/InfoProvider'
+import { useDataImc } from '../../context/DataImcContext'
 
-function DataCard (props) {
-  const { values, setValues } = useInfo()
+function ControlCard (props) {
+  const { values, setValues } = useDataImc()
 
   function increment () {
     if (values[props.name] < props.maximumValue) {
@@ -64,11 +64,11 @@ function DataCard (props) {
   )
 }
 
-DataCard.defaultProps = {
+ControlCard.defaultProps = {
   decimalPlaces: 2
 }
 
-DataCard.propTypes = {
+ControlCard.propTypes = {
   title: PropTypes.string,
   name: PropTypes.string,
   minimumValue: PropTypes.number.isRequired,
@@ -77,4 +77,4 @@ DataCard.propTypes = {
   decimalPlaces: PropTypes.number
 }
 
-export default DataCard
+export default ControlCard

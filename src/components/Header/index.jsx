@@ -7,10 +7,10 @@ import {
   Button
 } from './styles'
 
-import { useInfo } from '../../context/InfoProvider'
+import { useDataImc } from '../../context/DataImcContext'
 
 function Header () {
-  const { values, setValues } = useInfo()
+  const { values, setValues } = useDataImc()
 
   function clearInfors () {
     setValues({

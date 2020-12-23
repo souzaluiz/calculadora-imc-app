@@ -11,13 +11,13 @@ import {
 
 import colors from '../../styles/colors'
 import calculateIMC from '../../utils/calculateIMC'
-import { useInfo } from '../../context/InfoProvider'
+import { useDataImc } from '../../context/DataImcContext'
 import { useIsMount } from '../../hooks/useIsMount'
 
 const ResultCard = () => {
   const isMount = useIsMount()
   const [data, setData] = useState({})
-  const { values, setValues } = useInfo()
+  const { values, setValues } = useDataImc()
 
   useEffect(() => {
     if (!isMount) {
