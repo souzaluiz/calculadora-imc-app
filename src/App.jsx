@@ -3,16 +3,13 @@ import { StatusBar } from 'react-native'
 
 import InfoProvider from './context/InfoProvider'
 import colors from './styles/colors'
-import { AppWrapper } from './styles/AppWrapper'
-import Home from './pages/Home'
+import Home from './screens/Home'
 
 export default function App () {
   return (
     <InfoProvider>
-      <AppWrapper>
-        <StatusBar backgroundColor={colors.blackColor} barStyle="light-content"/>
-        <Home/>
-      </AppWrapper>
+      <StatusBar backgroundColor={colors.blackColor} barStyle="light-content"/>
+      <Home/>
     </InfoProvider>
   )
 }

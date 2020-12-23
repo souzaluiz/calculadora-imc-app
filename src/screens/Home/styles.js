@@ -2,8 +2,9 @@ import styled from 'styled-components/native'
 import { widthDP, heightDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
 
-export const HomeWrapper = styled.View`
+export const Wrapper = styled.View`
   flex: 1;
+  background-color: ${colors.backgroundColor};
 `
 
 export const CardsContainer = styled.View`

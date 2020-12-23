@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  HomeWrapper,
+  Wrapper,
   CardsContainer,
   ButtonCalculate,
   ButtonCalculateText
@@ -23,7 +23,7 @@ function Home () {
   }
 
   return (
-    <HomeWrapper>
+    <Wrapper>
       <Header />
 
       <CardsContainer>
@@ -51,7 +51,7 @@ function Home () {
         </ButtonCalculate>
 
       </CardsContainer>
-    </HomeWrapper>
+    </Wrapper>
   )
 }
 
