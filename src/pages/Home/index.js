@@ -32,18 +32,18 @@ function Home () {
         <DataCard
           title="Peso (kg)"
           minimumValue={15.0}
+          maximumValue={150.0}
           step={0.1}
           name="weight"
           decimalPlaces={1}
-          maximumValue={150.0}
         />
 
         <DataCard
           title="Altura (m)"
-          minimumValue={0.50}
+          minimumValue={0.5}
+          maximumValue={2.3}
           step={0.01}
           name="height"
-          maximumValue={2.3}
         />
 
         <ButtonCalculate onPress={calculateImc}>

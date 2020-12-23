@@ -46,16 +46,14 @@ function DataCard (props) {
         <SliderControl
           minimumValue={props.minimumValue}
           step={props.step}
-          value={values[props.name]}
+          value={props.minimumValue}
           maximumValue={props.maximumValue}
-          onValueChange={valuesSlider => (
+          onValueChange={valueSlider => (
             setValues({
               ...values,
-              [props.name]: valuesSlider
+              [props.name]: valueSlider
             })
           )}
-          minimumTrackTintColor="#F1F2F6"
-          maximumTrackTintColor="#A6A8B9"
         />
 
         <Button onPress={increment} >

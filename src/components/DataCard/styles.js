@@ -47,21 +47,20 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
 `
-
-Button.LessIcon = styled(LessIcon).attrs(({
+const IconStyle = {
   fill: colors.blackColor,
   width: widthDP(8),
   height: heightDP(8)
-}))``
+}
 
-Button.MoreIcon = styled(MoreIcon).attrs(({
-  fill: colors.blackColor,
-  width: widthDP(8),
-  height: heightDP(8)
-}))``
+Button.LessIcon = styled(LessIcon).attrs((IconStyle))``
+
+Button.MoreIcon = styled(MoreIcon).attrs((IconStyle))``
 
 export const SliderControl = styled(Slider).attrs({
-  thumbTintColor: colors.primaryColor
+  thumbTintColor: colors.primaryColor,
+  minimumTrackTintColor: '#F1F2F6',
+  maximumTrackTintColor: '#A6A8B9'
 })`
   width: 70%;
 `

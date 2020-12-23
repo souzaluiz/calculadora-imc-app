@@ -10,6 +10,7 @@ export const CardsContainer = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-evenly;
+  padding: ${heightDP(2)}px 0;
 `
 export const ButtonCalculate = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
