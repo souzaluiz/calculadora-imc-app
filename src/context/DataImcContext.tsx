@@ -3,15 +3,23 @@ import PropTypes from 'prop-types'
 
 import calculateIMC from '../utils/calculateIMC'
 
-const DataImcContext = createContext()
+export interface ImcContextType {
+  waiting: boolean
+  values: object
+  data: object
+  setValues: Function
+  clearResult: Function
+  calculateImc: Function
+}
 
-export function DataImcProvider ({ children }) {
+const DataImcContext = createContext<ImcContextType>({} as ImcContextType)
+
+const defaultValues = { weight: 15.0, height: 0.5 }
+
+export const DataImcProvider: React.FC = ({ children }) => {
   const [waiting, setWaiting] = useState(true)
   const [data, setData] = useState({})
-  const [values, setValues] = useState({
-    weight: 15.0,
-    height: 0.5
-  })
+  const [values, setValues] = useState(defaultValues)
 
   function calculateImc () {
     const result = calculateIMC(values)
@@ -32,26 +40,8 @@ export function DataImcProvider ({ children }) {
   )
 }
 
-DataImcProvider.propTypes = {
-  children: PropTypes.any
-}
+export function useDataImc (): ImcContextType {
+  const context = useContext(DataImcContext)
 
-export function useDataImc () {
-  const {
-    values,
-    setValues,
-    waiting,
-    data,
-    calculateImc,
-    clearResult
-  } = useContext(DataImcContext)
-
-  return {
-    values,
-    setValues,
-    waiting,
-    data,
-    calculateImc,
-    clearResult
-  }
+  return { ...context }
 }
