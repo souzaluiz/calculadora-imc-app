@@ -1,23 +1,11 @@
 import React from 'react'
 
-import {
-  Wrapper,
-  Title,
-  Void,
-  Button
-} from './styles'
+import { Wrapper, Title, Void, Button } from './styles'
 
 import { useDataImc } from '../../context/DataImcContext'
 
 function Header () {
-  const { values, setValues } = useDataImc()
-
-  function clearInfors () {
-    setValues({
-      ...values,
-      resultAvailable: false
-    })
-  }
+  const { clearResult } = useDataImc()
 
   return (
     <Wrapper>
@@ -25,7 +13,7 @@ function Header () {
 
       <Title>Calculadora IMC</Title>
 
-      <Button onPress={clearInfors}>
+      <Button onPress={clearResult}>
         <Button.Icon />
       </Button>
     </Wrapper>

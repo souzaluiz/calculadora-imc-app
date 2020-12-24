@@ -1,42 +1,40 @@
 import styled from 'styled-components/native'
 import Slider from '@react-native-community/slider'
 
+import { widthDP, heightDP } from '../../utils/responsive'
+
 import LessIcon from '../../assets/less.svg'
 import MoreIcon from '../../assets/more.svg'
-import { widthDP, heightDP } from '../../utils/responsive'
+
 import colors from '../../styles/colors'
 
-export const CardWrapper = styled.View`
+export const Card = styled.View`
   background-color: ${colors.blackColor};
   margin-top: ${heightDP(1.5)}px;
   width: ${widthDP(96)}px;
-  padding-top: ${heightDP(2)}px;
-  padding-bottom: ${heightDP(2)}px;
+  padding: ${heightDP(2)}px 0;
   align-items: center;
   border-radius: 8px;
 `
 
-export const CardTitle = styled.Text`
+Card.Title = styled.Text`
   color: ${colors.whiteColor};
   font-family: 'PoppinsRegular';
   font-size: ${heightDP(2)}px;
-  text-align: center;
 `
 
-export const CardValue = styled.Text`
+Card.Value = styled.Text`
   color: ${colors.whiteColor};
   margin-top: 2px;
   font-family: 'PoppinsRegular';
   font-size: ${heightDP(5.2)}px;
-  text-align: center;
 `
 
-export const ActionsContainer = styled.View`
+export const Actions = styled.View`
   width: 95%;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: ${heightDP(1)}px;
-  margin-bottom: ${heightDP(1)}px;
+  margin: ${heightDP(1)}px 0;
 `
 
 export const Button = styled.TouchableOpacity`

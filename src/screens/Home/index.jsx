@@ -9,14 +9,7 @@ import { useDataImc } from '../../context/DataImcContext'
 import { Wrapper, Cards, Button } from './styles'
 
 function Home () {
-  const { values, setValues } = useDataImc()
-
-  function calculateImc () {
-    setValues({
-      ...values,
-      onClickCalculate: !values.onClickCalculate
-    })
-  }
+  const { calculateImc } = useDataImc()
 
   return (
     <Wrapper>

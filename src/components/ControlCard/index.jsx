@@ -1,14 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  CardWrapper,
-  CardTitle,
-  CardValue,
-  ActionsContainer,
-  Button,
-  SliderControl
-} from './styles'
+import { Card, Actions, Button, SliderControl } from './styles'
 
 import { useDataImc } from '../../context/DataImcContext'
 
@@ -33,12 +26,19 @@ function ControlCard (props) {
     }
   }
 
-  return (
-    <CardWrapper>
-      <CardTitle>{props.title}</CardTitle>
-      <CardValue>{values[props.name].toFixed(props.decimalPlaces)}</CardValue>
+  function onChangeSlider (value) {
+    setValues({
+      ...values,
+      [props.name]: value
+    })
+  }
 
-      <ActionsContainer>
+  return (
+    <Card>
+      <Card.Title>{props.title}</Card.Title>
+      <Card.Value>{values[props.name].toFixed(props.decimalPlaces)}</Card.Value>
+
+      <Actions>
         <Button onPress={decrement} >
           <Button.LessIcon />
         </Button>
@@ -48,19 +48,14 @@ function ControlCard (props) {
           step={props.step}
           value={props.minimumValue}
           maximumValue={props.maximumValue}
-          onValueChange={valueSlider => (
-            setValues({
-              ...values,
-              [props.name]: valueSlider
-            })
-          )}
+          onValueChange={onChangeSlider}
         />
 
         <Button onPress={increment} >
           <Button.MoreIcon />
         </Button>
-      </ActionsContainer>
-    </CardWrapper>
+      </Actions>
+    </Card>
   )
 }
 
