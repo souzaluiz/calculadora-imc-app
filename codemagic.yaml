@@ -12,9 +12,9 @@ workflows:
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmdyX3labHFYcVZxNE0xRGI4TzNnbFdPcXpuWWw4OVBpYkdKbVhVX0I3cmdwWF9nZkxmN1pUUlR5ckgwb1RPRVdrYjc0UGxFZzhwcVZ0azVRQTczeW9ZUjR2bUE9PQ==)
             node: latest
         scripts:
-            - name: Install npm dependencies
+            - name: Install dependencies
               script: |
-                                npm install
+                                yarn install
             - name: Set Android SDK location
               script: |
                                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
