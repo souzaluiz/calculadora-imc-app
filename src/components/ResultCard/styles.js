@@ -14,20 +14,20 @@ export const Card = styled.View`
 export const SmallText = styled.Text`
   color: ${({ color }) => color};
   font-size: ${heightDP(1.6)}px;
-  font-family: 'PoppinsMedium';
+  font-family: 'poppins-medium';
   text-transform: uppercase;
 `
 
 export const BigText = styled.Text`
   color: ${({ color }) => color};
   font-size: ${heightDP(4)}px;
-  font-family: 'PoppinsMedium';
+  font-family: 'poppins-medium';
   text-transform: uppercase;
 `
 
 export const MediumText = styled.Text`
   color: ${({ color }) => color};
   font-size: ${heightDP(3.2)}px;
-  font-family: 'PoppinsMedium';
+  font-family: 'poppins-medium';
   text-transform: uppercase;
 `

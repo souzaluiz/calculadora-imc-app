@@ -24,7 +24,7 @@ export const Button = styled.TouchableOpacity`
 `
 
 Button.Text = styled.Text`
-  font-family: 'PoppinsMedium';
+  font-family: 'poppins-medium';
   color: ${colors.blackColor};
   font-size: ${heightDP(2.5)}px;
 `

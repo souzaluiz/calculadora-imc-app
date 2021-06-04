@@ -18,14 +18,14 @@ export const Card = styled.View`
 
 Card.Title = styled.Text`
   color: ${colors.whiteColor};
-  font-family: 'PoppinsRegular';
+  font-family: 'poppins-regular';
   font-size: ${heightDP(2)}px;
 `
 
 Card.Value = styled.Text`
   color: ${colors.whiteColor};
   margin-top: 2px;
-  font-family: 'PoppinsRegular';
+  font-family: 'poppins-regular';
   font-size: ${heightDP(5.2)}px;
 `
 
