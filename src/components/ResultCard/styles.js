@@ -1,11 +1,10 @@
 import styled from 'styled-components/native'
 import colors from '../../styles/colors'
-import { heightDP, widthDP } from '../../utils/responsive'
+import { heightDP } from '../../utils/responsive'
 
 export const Card = styled.View`
   height: ${heightDP(25)}px;
   padding-top: 10px;
-  width: ${widthDP(96)}px;
   border-radius: 8px;
   align-items: center;
   justify-content: space-evenly;

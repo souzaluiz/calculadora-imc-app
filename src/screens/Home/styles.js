@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
-import { widthDP, heightDP } from '../../utils/responsive'
+import { heightDP } from '../../utils/responsive'
 import colors from '../../styles/colors'
+import { theme } from '../../theme'
 
 export const Wrapper = styled.View`
   flex: 1;
@@ -9,16 +10,14 @@ export const Wrapper = styled.View`
 
 export const Cards = styled.View`
   flex: 1;
-  align-items: center;
+  padding: ${theme.spacing.small}px;
   justify-content: space-evenly;
-  padding: ${heightDP(2)}px 0;
 `
 
 export const Button = styled.TouchableOpacity`
   background-color: ${colors.primaryColor};
   margin-top: ${heightDP(2)}px;
   height: ${heightDP(7)}px;
-  width: ${widthDP(96)}px;
   border-radius: 6px;
   align-items: center;
   justify-content: center;
