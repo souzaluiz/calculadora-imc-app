@@ -35,24 +35,15 @@ workflows:
               script: |
                 echo 'Installing App Center CLI tools'
                 npm install -g appcenter-cli
-
-                echo "Find build artifacts"
-                apkPath=$(find build -name "*.apk" | head -1)
-                echo "Found apk at $apkPath"
-
-                if [[ -z ${apkPath} ]]
-                then
-                    echo "No apks were found, skip publishing to App Center"
-                else
-                    echo "Publishing $apkPath to App Center"
-                    appcenter distribute release \
-                        --group Collaborators \
-                        --file "${apkPath}" \
-                        --release-notes 'App submission via Codemagic' \
-                        --app luizhsouza/a0a78565-108a-443f-a5d0-a7e878a8bca0 \
-                        --token "${APP_CENTER_TOKEN}" \
-                        --quiet
-                fi             
+                
+                echo "Publishing $apkPath to App Center"
+                appcenter distribute release \
+                    --group Collaborators \
+                    --file android/app/build/outputs/apk/release/app-release.apk \
+                    --release-notes 'App submission via Codemagic' \
+                    --app luizhsouza/a0a78565-108a-443f-a5d0-a7e878a8bca0 \
+                    --token "${APP_CENTER_TOKEN}" \
+                    --quiet
         artifacts:
             - android/app/build/outputs/**/*.apk
         publishing:
