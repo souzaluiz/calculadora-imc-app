@@ -10,6 +10,7 @@ workflows:
                 CM_KEYSTORE_PASSWORD: Encrypted(Z0FBQUFBQmdzQXF1TWU0cUlPT0lNY0s0R0d0UGdfRE1fOVMwSUdZVXBqTTFMa0UtQ3ptS3dEd1VmVTdFTHpfLUFjOXk1aUlReWQ4NFVEVTRQWkI0WnNLRFVkaWQ0UUR0Y0E9PQ==)
                 CM_KEY_ALIAS_PASSWORD: Encrypted(Z0FBQUFBQmdzQXF1TWU0cUlPT0lNY0s0R0d0UGdfRE1fOVMwSUdZVXBqTTFMa0UtQ3ptS3dEd1VmVTdFTHpfLUFjOXk1aUlReWQ4NFVEVTRQWkI0WnNLRFVkaWQ0UUR0Y0E9PQ==)
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmdzQXJVemJfVGo3S0FFeFQ3YWhGQXAzTUw2YWEwUUZVVnRMWG1lTTM5UVlYNjJBa2dvTkdsTWZtU2xRWlg4U3RlY2ItN2ZQcEk4MzljdFZtS1JqanpTSjRhcVE9PQ==)
+                APP_CENTER_TOKEN: Encrypted(Z0FBQUFBQmd5Z2xESkFqbFFQQ2VldlItRGVhU0JEM1pjVFQ1Rmsyc0g0alA0ejI5MEczWks0WWJ6ZVJoWnZXUllVV2IwV0p2bjVZZGZ0MElueG93NEQtSmNGRVZ1QS1qeS1yN1pxWFRQYjBqa3VUV0gtNlZON28tdTZDWXNwcUJER1h5d1p6aDI2aXg=)
             node: latest
         scripts:
             - name: Install dependencies
@@ -29,10 +30,31 @@ workflows:
                     EOF                                   
             - name: Build Android release
               script: |
-                cd android && ./gradlew assembleRelease                
+                cd android && ./gradlew assembleRelease
+            - name: Upload apk for app center
+              script: |
+                echo 'Installing App Center CLI tools'
+                npm install -g appcenter-cli
+
+                echo "Find build artifacts"
+                apkPath=$(find build -name "*.apk" | head -1)
+                echo "Found apk at $apkPath"
+
+                if [[ -z ${apkPath} ]]
+                then
+                    echo "No apks were found, skip publishing to App Center"
+                else
+                    echo "Publishing $apkPath to App Center"
+                    appcenter distribute release \
+                        --group Collaborators \
+                        --file "${apkPath}" \
+                        --release-notes 'App submission via Codemagic' \
+                        --app luizhsouza/a0a78565-108a-443f-a5d0-a7e878a8bca0 \
+                        --token "${APP_CENTER_TOKEN}" \
+                        --quiet
+                fi             
         artifacts:
             - android/app/build/outputs/**/*.apk
-
         publishing:
           email:
             recipients:
