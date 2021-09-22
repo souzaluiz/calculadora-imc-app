@@ -2,7 +2,7 @@
   "scheme": null,
   "hostType": "lan",
   "lanType": "ip",
-  "devClient": false,
+  "devClient": true,
   "dev": true,
   "minify": false,
   "urlRandomness": null,
