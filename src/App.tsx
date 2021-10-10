@@ -1,5 +1,6 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
+import { NativeBaseProvider } from 'native-base'
 import { useFonts } from 'expo-font'
 
 import { DataImcProvider } from './context/DataImcContext'
@@ -13,9 +14,12 @@ export default function App () {
   if(!fontsLoaded) return null;
 
   return (
-    <DataImcProvider>
-      <StatusBar backgroundColor={colors.blackColor} barStyle="light-content"/>
-      <Home/>
-    </DataImcProvider>
+    <NativeBaseProvider>
+      <DataImcProvider>
+        <StatusBar backgroundColor={colors.blackColor} barStyle="light-content"/>
+        <Home/>
+      </DataImcProvider>
+    </NativeBaseProvider>
+
   )
 }

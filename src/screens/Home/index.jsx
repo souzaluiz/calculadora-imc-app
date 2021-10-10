@@ -7,6 +7,7 @@ import ResultCard from '../../components/ResultCard'
 import { useDataImc } from '../../context/DataImcContext'
 
 import { Wrapper, Cards, Button } from './styles'
+import { Tabs } from 'native-base'
 
 function Home () {
   const { calculateImc } = useDataImc()
@@ -40,6 +41,22 @@ function Home () {
         </Button>
 
       </Cards>
+
+      <Tabs.Views>
+        <Tabs.View>One</Tabs.View>
+        <Tabs.View>Two</Tabs.View>
+        <Tabs.View>Three</Tabs.View>
+      </Tabs.Views>
+
+      <Tabs >
+        <Tabs.Bar>
+          <Tabs.Tab>One</Tabs.Tab>
+          <Tabs.Tab>Twos</Tabs.Tab>
+          <Tabs.Tab>Three</Tabs.Tab>
+        </Tabs.Bar>
+
+      </Tabs>
+
     </Wrapper>
   )
 }
