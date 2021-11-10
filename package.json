@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "expo start --dev-client"
   },
   "dependencies": {
     "@react-native-community/slider": "4.1.7",
@@ -19,7 +19,15 @@
     "react-native-responsive-screen": "^1.4.1",
     "react-native-svg": "12.1.1",
     "react-native-svg-transformer": "^0.14.3",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "expo-status-bar": "~1.1.0",
+    "expo-updates": "~0.10.13",
+    "react-dom": "17.0.1",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.8.0",
+    "react-native-web": "0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
