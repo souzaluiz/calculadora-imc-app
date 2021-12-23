@@ -1,5 +1,5 @@
 {
-  "scheme": null,
+  "scheme": "com.luizhsouza.calculatorimc",
   "hostType": "lan",
   "lanType": "ip",
   "devClient": true,

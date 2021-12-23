@@ -3,6 +3,12 @@
   "displayName": "Calculadora IMC",
   "expo": {
     "name": "Calculadora IMC",
-    "slug": "CalculatorImc"
+    "slug": "CalculatorImc",
+    "android": {
+      "package": "com.luizhsouza.calculatorimc"
+    },
+    "ios": {
+      "bundleIdentifier": "com.luizhsouza.calculatorimc"
+    }
   }
 }
