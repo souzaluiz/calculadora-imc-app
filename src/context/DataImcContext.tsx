@@ -13,7 +13,7 @@ export interface ImcContextType {
   data: object
   setValues: Function
   clearResult: Function
-  calculateImc: Function
+  calculateImc: () => void
 }
 
 const DataImcContext = createContext<ImcContextType>({} as ImcContextType)
