@@ -15,7 +15,7 @@ export const Wrapper = styled.View`
 export const Title = styled.Text`
   font-size: ${heightDP(3)}px;
   color: ${colors.whiteColor};
-  font-family: 'PoppinsRegular';
+  font-family: 'poppins-regular';
 `
 
 export const Button = styled.TouchableOpacity`

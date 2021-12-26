@@ -10,8 +10,6 @@ import colors from '../../styles/colors'
 
 export const Card = styled.View`
   background-color: ${colors.blackColor};
-  margin-top: ${heightDP(1.5)}px;
-  width: ${widthDP(96)}px;
   padding: ${heightDP(2)}px 0;
   align-items: center;
   border-radius: 8px;
@@ -19,14 +17,14 @@ export const Card = styled.View`
 
 Card.Title = styled.Text`
   color: ${colors.whiteColor};
-  font-family: 'PoppinsRegular';
+  font-family: 'poppins-regular';
   font-size: ${heightDP(2)}px;
 `
 
 Card.Value = styled.Text`
   color: ${colors.whiteColor};
   margin-top: 2px;
-  font-family: 'PoppinsRegular';
+  font-family: 'poppins-regular';
   font-size: ${heightDP(5.2)}px;
 `
 
