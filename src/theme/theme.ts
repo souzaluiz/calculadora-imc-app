@@ -15,7 +15,7 @@ export const nativeBaseTheme = extendTheme({
     },
     background: {
       primary: '#232330',
-      secodnary: '#161623'
+      secondary: '#161623'
     },
     neutral: {
       white: '#FDFFFD',
