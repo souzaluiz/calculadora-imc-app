@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import { Card, Actions, Button, SliderControl } from './styles'
 
 import { useDataImc } from '../../context/DataImcContext'
+import { Feather } from '@expo/vector-icons'
+import { rem } from '../../utils/rem'
 
 function ControlCard (props) {
   const { values, setValues } = useDataImc()
@@ -40,7 +42,7 @@ function ControlCard (props) {
 
       <Actions>
         <Button onPress={decrement} >
-          <Button.LessIcon />
+          <Feather name="minus-circle" size={rem(1.8)} color="black" />
         </Button>
 
         <SliderControl
@@ -52,7 +54,7 @@ function ControlCard (props) {
         />
 
         <Button onPress={increment} >
-          <Button.MoreIcon />
+          <Feather name="plus-circle" size={rem(1.8)} color="black" />
         </Button>
       </Actions>
     </Card>

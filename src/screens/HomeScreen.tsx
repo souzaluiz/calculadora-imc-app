@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Text } from 'native-base'
+import { Box, Button } from 'native-base'
 
 import Header from '../components/Header'
 import ControlCard from '../components/ControlCard'
